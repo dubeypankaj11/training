@@ -23,7 +23,7 @@ public interface TrainingService extends ProductService
 
 	List<TrainingModel> getAllTraining();
 
-	List<CourseModel> findCourseByCode(String code);
+	CourseModel findCourseByCode(String code);
 
-	List<TrainingModel> findTrainingByCode(String code);
+	TrainingModel findTrainingByCode(String code);
 }

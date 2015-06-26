@@ -1,15 +1,21 @@
 /**
- * 
+ *
  */
 package org.training.service.impl;
+
+import static de.hybris.platform.servicelayer.util.ServicesUtil.validateIfSingleResult;
+import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
+import static java.lang.String.format;
 
 import de.hybris.platform.product.impl.DefaultProductService;
 
 import java.util.List;
 
+import org.training.dao.TrainingDao;
 import org.training.model.CourseModel;
 import org.training.model.TrainingModel;
 import org.training.service.TrainingService;
+
 
 /**
  * @author yawo
@@ -18,7 +24,28 @@ import org.training.service.TrainingService;
 public class DefaultTrainingService extends DefaultProductService implements TrainingService
 {
 
-	/* (non-Javadoc)
+	TrainingDao trainingDao;
+
+	/**
+	 * @return the trainingDao
+	 */
+	public TrainingDao getTrainingDao()
+	{
+		return trainingDao;
+	}
+
+	/**
+	 * @param trainingDao
+	 *           the trainingDao to set
+	 */
+	public void setTrainingDao(final TrainingDao trainingDao)
+	{
+		this.trainingDao = trainingDao;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.training.service.TrainingService#getAllCourses()
 	 */
 	@Override
@@ -28,17 +55,21 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.training.service.TrainingService#getAllCoursesByTraining(java.lang.String)
 	 */
 	@Override
-	public List<CourseModel> getAllCoursesByTraining(String code)
+	public List<CourseModel> getAllCoursesByTraining(final String code)
 	{
 		// YTODO Auto-generated method stub
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.training.service.TrainingService#getAllTraining()
 	 */
 	@Override
@@ -48,24 +79,37 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.training.service.TrainingService#findCourseByCode(java.lang.String)
 	 */
 	@Override
-	public List<CourseModel> findCourseByCode(String code)
+	public CourseModel findCourseByCode(final String code)
 	{
-		// YTODO Auto-generated method stub
-		return null;
+		validateParameterNotNull(code, "Parameter code must not be null");
+		final List<CourseModel> courses = trainingDao.findCourseByCode(code);
+
+		validateIfSingleResult(courses, format("Product with code '%s' not found!", code),
+				format("Product code '%s' is not unique, %d products found!", code, Integer.valueOf(courses.size())));
+
+		return courses.get(0);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.training.service.TrainingService#findTrainingByCode(java.lang.String)
 	 */
 	@Override
-	public List<TrainingModel> findTrainingByCode(String code)
+	public TrainingModel findTrainingByCode(final String code)
 	{
-		// YTODO Auto-generated method stub
-		return null;
-	}
+		validateParameterNotNull(code, "Parameter code must not be null");
+		final List<TrainingModel> trainings = trainingDao.findTrainingByCode(code);
 
+		validateIfSingleResult(trainings, format("Product with code '%s' not found!", code),
+				format("Product code '%s' is not unique, %d products found!", code, Integer.valueOf(trainings.size())));
+
+		return trainings.get(0);
+	}
 }
