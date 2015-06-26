@@ -84,6 +84,10 @@
 		<constructor-arg value="Product"/>
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
-			
+
+	<bean id="trainingService"   class="org.training.service.impl.DefaultTrainingService">
+		<property name="trainingDao" ref="trainingDao"/>
+	</bean>
+						
 			
 </beans>
