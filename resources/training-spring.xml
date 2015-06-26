@@ -88,6 +88,11 @@
 	<bean id="trainingService"   class="org.training.service.impl.DefaultTrainingService">
 		<property name="trainingDao" ref="trainingDao"/>
 	</bean>
+	
+	
+	<bean id="trainingFacade"   class="org.training.facade.impl.DefaultTrainingFacade">
+		<property name="trainingService" ref="trainingService"/>
+	</bean>
 						
 			
 </beans>

@@ -38,6 +38,7 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
+
 <!--
 	Enabling Spring managed Delegating Filter Proxy for hybris Filter Stack.
 -->
@@ -69,6 +70,17 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>WEB-INF/training-web-spring.xml</param-value>
 	</context-param>
+
+
+  <servlet-name>springmvc</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>springmvc</servlet-name>
+  <url-pattern>/</url-pattern>
+</servlet-mapping>
 
 	<listener>
 		<listener-class>de.hybris.platform.spring.HybrisContextLoaderListener</listener-class>

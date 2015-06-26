@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.training;
+package org.training.facade.impl;
 
 import de.hybris.platform.commercefacades.product.impl.DefaultProductFacade;
 
@@ -44,7 +44,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.training.facade.TrainingFacade#getAllCourses()
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.training.facade.TrainingFacade#getAllCoursesByTraining(java.lang.String)
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.training.facade.TrainingFacade#getAllTraining()
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.training.facade.TrainingFacade#findCourseByCode(java.lang.String)
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.training.facade.TrainingFacade#findTrainingByCode(java.lang.String)
 	 */
 	@Override
