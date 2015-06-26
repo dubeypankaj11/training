@@ -71,7 +71,7 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 	 * @see org.training.service.TrainingService#getAllTraining()
 	 */
 	@Override
-	public List<TrainingModel> getAllTraining()
+	public List<TrainingModel> getAllTrainings()
 	{
 		return trainingDao.getAllTraining();
 	}

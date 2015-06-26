@@ -21,7 +21,7 @@ public interface TrainingService extends ProductService
 
 	List<CourseModel> getAllCoursesByTraining(String code);
 
-	List<TrainingModel> getAllTraining();
+	List<TrainingModel> getAllTrainings();
 
 	CourseModel findCourseByCode(String code);
 
