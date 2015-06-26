@@ -51,8 +51,7 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 	@Override
 	public List<CourseModel> getAllCourses()
 	{
-		// YTODO Auto-generated method stub
-		return null;
+		return trainingDao.getAllCourses();
 	}
 
 	/*
@@ -63,8 +62,7 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 	@Override
 	public List<CourseModel> getAllCoursesByTraining(final String code)
 	{
-		// YTODO Auto-generated method stub
-		return null;
+		return trainingDao.getAllCoursesByTraining(code);
 	}
 
 	/*
@@ -75,8 +73,7 @@ public class DefaultTrainingService extends DefaultProductService implements Tra
 	@Override
 	public List<TrainingModel> getAllTraining()
 	{
-		// YTODO Auto-generated method stub
-		return null;
+		return trainingDao.getAllTraining();
 	}
 
 	/*
