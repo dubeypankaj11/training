@@ -27,7 +27,7 @@
 	-->
 	<bean class="org.training.data.CourseData" extends="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="subject" type="String"/>
-		<property name="numberOfDays" type="String"/>
+		<property name="numberOfDays" type="java.lang.Integer"/>
 		<property name="language" type="String"/>
 		<property name="trainer" type="String"/>
 		<property name="onlineDate" type="java.util.Date"/>
@@ -36,7 +36,7 @@
 	
 	<bean class="org.training.data.TrainingData"  extends="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="subject" type="String"/>
-		<property name="numberOfDays" type="String"/>
+		<property name="numberOfDays" type="java.lang.Integer"/>
 		<property name="onlineDate" type="java.util.Date"/>
 	</bean>
 	
