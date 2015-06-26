@@ -25,5 +25,22 @@
 		<property name="flag" type="boolean"/>
 	</bean>
 	-->
+	<bean class="org.training.data.CourseData" extends="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="subject" type="String"/>
+		<property name="numberOfDays" type="String"/>
+		<property name="language" type="String"/>
+		<property name="trainer" type="String"/>
+		<property name="onlineDate" type="java.util.Date"/>
+		
+	</bean>
+	
+	<bean class="org.training.data.TrainingData" extends="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="subject" type="String"/>
+		<property name="numberOfDays" type="String"/>
+		<property name="onlineDate" type="java.util.Date"/>
+	</bean>
+	
+	
+
 
 </beans>
