@@ -44,7 +44,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllCourses()
 	 */
 	@Override
@@ -61,13 +61,13 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllCoursesByTraining(java.lang.String)
 	 */
 	@Override
 	public List<CourseData> getAllCoursesByTraining(final String code)
 	{
-		final List<CourseModel> courses = trainingService.getAllCoursesByTraining(code)
+		final List<CourseModel> courses = trainingService.getAllCoursesByTraining(code);
 		final List<CourseData> datas = new ArrayList<CourseData>();
 		for (final CourseModel course : courses)
 		{
@@ -78,7 +78,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllTraining()
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#findCourseByCode(java.lang.String)
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#findTrainingByCode(java.lang.String)
 	 */
 	@Override
