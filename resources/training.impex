@@ -2,14 +2,14 @@
 # Create the Training Product Catalog
 #
 $productCatalog=trainingProductCatalog
-$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
 $languages=en,de
 
 $categories=target(code, $catalogVersion)[unique=true]
 $supercategories=source(code, $catalogVersion)[unique=true]
 
 $productCatalogName=Training Product Catalog
-$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Online']))
 $approved=approvalstatus(code)[default='approved']
 $taxGroup=Europe1PriceFactory_PTG(code)[default=eu-vat-full]
 
@@ -23,7 +23,7 @@ INSERT_UPDATE Catalog;id[unique=true]
 
 # Product versions for product catalogs
 INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active;languages(isoCode);readPrincipals(uid)
-;$productCatalog;Staged;false;$languages;employeegroup
+;$productCatalog;Online;false;$languages;employeegroup
 ;$productCatalog;Online;true;$languages;employeegroup
 
 ###
