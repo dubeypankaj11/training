@@ -80,17 +80,17 @@
 	       <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />	
 	  -->
 	  
-	<bean id="trainingDao"   class="org.training.dao.impl.DefaultTrainingDao">
-		<constructor-arg value="Product"/>
+	<bean id="trainingDao" parent="productDao"  class="org.training.dao.impl.DefaultTrainingDao">
+<!-- 		<constructor-arg value="Product"/> -->
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
 
-	<bean id="trainingService"   class="org.training.service.impl.DefaultTrainingService">
+	<bean id="trainingService" parent="productService"  class="org.training.service.impl.DefaultTrainingService">
 		<property name="trainingDao" ref="trainingDao"/>
 	</bean>
 	
 	
-	<bean id="trainingFacade"   class="org.training.facade.impl.DefaultTrainingFacade">
+	<bean id="trainingFacade" parent="productFacade"  class="org.training.facade.impl.DefaultTrainingFacade">
 		<property name="trainingService" ref="trainingService"/>
 	</bean>
 						

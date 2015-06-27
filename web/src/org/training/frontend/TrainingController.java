@@ -3,6 +3,9 @@
  */
 package org.training.frontend;
 
+import de.hybris.platform.jalo.JaloSession;
+import de.hybris.platform.jalo.user.UserManager;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ public class TrainingController
 	@RequestMapping(value = "/trainings")
 	public String showTrainings(final Model model)
 	{
+		JaloSession.getCurrentSession().setUser(UserManager.getInstance().getAdminEmployee());
 		final List<TrainingData> trainings = trainingFacade.getAllTraining();
 		model.addAttribute("trainings", trainings);
 		return "TrainingListing";
