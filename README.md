@@ -2,8 +2,7 @@
 Formation SQLI Hybris
 
 ## Pour voir l'exemple
-![alt tag](https://www.diigo.com/file/image/qpqbbrrzcqeqbpcpazbrcseass/SQLI+Hybris+Training+Extension+-+PDP.jpg)
-
+![alt tag](https://www.diigo.com/file/image/qpqbbrrzcqeqbpospzbrcsebas/SQLI+Hybris+Training+Extension+-+PDP.jpg)
 * Récupérer l'extension de github et remplacer dans custom
 * Lancer la commande ant depuis le dossier hybris/bin/platform 
 * Lancer la commande hybrisserver.bat depuis le dossier hybris/bin/platform
