@@ -1,5 +1,3 @@
-# training extension
-Formation SQLI Hybris
 ![alt tag](https://www.diigo.com/file/image/qpqbbrrzcqeqbrdrozbrcseccd/SQLI+Hybris+Training+Extension+-+Homepage.jpg)
 ## Pour voir l'exemple
 ![alt tag](https://www.diigo.com/file/image/qpqbbrrzcqeqbrbobzbrcsecbq/SQLI+Hybris+Training+Extension+-+PDP.jpg)
