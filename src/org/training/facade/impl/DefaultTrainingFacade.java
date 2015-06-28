@@ -44,7 +44,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllCourses()
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllCoursesByTraining(java.lang.String)
 	 */
 	@Override
@@ -78,7 +78,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#getAllTraining()
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#findCourseByCode(java.lang.String)
 	 */
 	@Override
@@ -109,7 +109,7 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.training.facade.TrainingFacade#findTrainingByCode(java.lang.String)
 	 */
 	@Override
@@ -126,8 +126,8 @@ public class DefaultTrainingFacade extends DefaultProductFacade<CourseData> impl
 		data.setCode(course.getCode());
 		data.setSubject(course.getSubject());
 		data.setNumberOfDays(course.getNumberOfDays());
-		data.setTrainer(course.getCode());
-		data.setLanguage(course.getCode());
+		data.setTrainer(String.format("%s (%s)", course.getTrainer().getName(), course.getTrainer().getUid()));
+		data.setLanguage(course.getLanguage().getIsocode());
 		data.setOnlineDate(course.getOnlineDate());
 		return data;
 	}
