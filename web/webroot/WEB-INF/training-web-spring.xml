@@ -43,7 +43,8 @@
 				<ref bean="log4jFilter"/>
 				<ref bean="dynamicTenantActivationFilter"/>
 				<ref bean="sessionFilter"/>
-           		<ref bean="trainingSecureMediaFilter"/>				
+           		<ref bean="trainingSecureMediaFilter"/>	
+           		<ref bean="trainingSimpleCatalogVersionActivationFilter"/>			
 			</list>
 		</constructor-arg>
 	</bean>
@@ -54,7 +55,12 @@
        <property name="userService" ref="userService"/>
        <property name="mediaService" ref="mediaService"/>
       <!-- <property name="secureMediaToken" value="securemedias"/>  securemedias is default but you may overwrite it -->
-     </bean>	
+   </bean>
+   
+   <bean id="trainingSimpleCatalogVersionActivationFilter"	class="de.hybris.platform.servicelayer.web.SimpleCatalogVersionActivationFilter">
+   		<property name="catalogVersionService" ref="catalogVersionService"/>
+   		<property name="activeCatalogVersions" value="trainingProductCatalog:Online"/>
+   </bean>
 
 	<!-- 
 	 WARNING: 
